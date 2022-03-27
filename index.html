@@ -1,13 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.rawgit.com/oauth-io/oauth-js/c5af4519/dist/oauth.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/4.12.0/bootstrap-social.min.css">
   	<title>WhirlCode</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script>
+      $('#github-button').on('click', function() {
+        OAuth.initialize('66b2ff20af02640663f0');
+        OAuth.popup('github').then(github => {
+        console.log(github);
+        console.log(github.me());
+      });
+    })
+    </script>
     <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
+    <a id="github-button" class="btn btn-block btn-social btn-github">
+    <i class="fa fa-github"></i> Sign in with Github
+    </a>
     <textarea id="html" placeholder="HTML"></textarea>
     <textarea id="css" placeholder="CSS"></textarea>
     <textarea id="js" placeholder="JavaScript"></textarea>
