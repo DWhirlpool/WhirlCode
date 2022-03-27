@@ -6,21 +6,24 @@
   	<title>WhirlCode</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
-      $('#github-button').on('click', function() {
+      function authorize() {
         OAuth.initialize('66b2ff20af02640663f0');
         OAuth.popup('github').then(github => {
         console.log(github);
         console.log(github.me());
-      });
-    })
+      }
     </script>
+    <style>
+     i {
+      top: 0;
+      right: 0;
+     }
+    </style>
     <link rel="stylesheet" href="style.css">
   </head>
 
   <body>
-    <a id="github-button" class="btn btn-block btn-social btn-github">
-    <i class="fa fa-github"></i> Sign in with Github
-    </a>
+    <i onclick="authorize()">Sign in with Github</i>
     <textarea id="html" placeholder="HTML"></textarea>
     <textarea id="css" placeholder="CSS"></textarea>
     <textarea id="js" placeholder="JavaScript"></textarea>
