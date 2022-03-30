@@ -4,28 +4,15 @@
     <script src="https://cdn.rawgit.com/oauth-io/oauth-js/c5af4519/dist/oauth.js"></script>
   	<title>WhirlCode</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script>
-      function authorize() {
-        OAuth.initialize('66b2ff20af02640663f0');
-        OAuth.popup('github').then(github => {
-        console.log(github);
-        console.log(github.me());
-      }
-    </script>
-    <style>
-     i {
-      top: 0;
-      right: 0;
-     }
-    </style>
+    <link rel="stylesheet" href="prism.css">
     <link rel="stylesheet" href="style.css">
+    <script src="prism.js"></script>
   </head>
 
   <body>
-    <button onclick="authorize()">Sign in with Github</button>
-    <textarea id="html" placeholder="HTML"></textarea>
-    <textarea id="css" placeholder="CSS"></textarea>
-    <textarea id="js" placeholder="JavaScript"></textarea>
+    <textarea id="html" placeholder="HTML" class="language-html"></textarea>
+    <textarea id="css" placeholder="CSS" class="language-css"></textarea>
+    <textarea id="js" placeholder="JavaScript"  class="language-js"></textarea>
     <iframe id="code"></iframe>
     <script type="text/javascript" src="app.js"></script>
   </body>
